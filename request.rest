@@ -1,0 +1,22 @@
+GET https://viacep.com.br/ws/30310300/json/
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/test
+Content-Type: application/json
+
+{
+    "cep":"30310300"
+}
+
+###
+POST http://localhost:3003/users/create
+Content-type: application/json
+
+{
+    "name": "Renato Peçanha",
+    "nickname": "Chub",
+    "email": "nartain@gmail.com",
+    "zipcode": "30310300"
+}

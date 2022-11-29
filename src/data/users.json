@@ -1,0 +1,14 @@
+[
+   {
+      "id" :1,
+      "name":  "Renato Peçanha",
+      "email": "nartain@gmail.com",
+      "password":  "quarentaedois"
+   },
+   {
+      "id" :2,
+      "name":  "Rhavi Marques",
+      "email": "nartainpower@gmail.com",
+      "password":  "fortytwo"
+   }
+]
