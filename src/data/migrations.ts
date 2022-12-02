@@ -37,17 +37,17 @@ const createTables = () => connection
 
 const insertUsers = () => connection("aula_webservices_users")
    .insert(users)
-   .then(() => { console.log("Usuários criados") })
+   .then(() => { console.log("Users created") })
    .catch(printError)
 
 const insertProducts = () => connection("aula_webservices_users")
    .insert(products)
-   .then(() => { console.log("Usuários criados") })
+   .then(() => { console.log("Products created") })
    .catch(printError)
 
 const insertPurchases = () => connection("aula_webservices_users")
    .insert(purchases)
-   .then(() => { console.log("Usuários criados") })
+   .then(() => { console.log("Purchases created") })
    .catch(printError)
 
 
@@ -55,5 +55,5 @@ const insertPurchases = () => connection("aula_webservices_users")
 const closeConnection = () => { connection.destroy() }
 
 createTables()
-   .then(insertUsers, insertProducts, insertPurchases)
+   .then(insertUsers, insertProducts)
    .finally(closeConnection)
