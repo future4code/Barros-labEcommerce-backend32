@@ -1,0 +1,14 @@
+[
+    {
+       "id" :1,
+       "name":  "Kawasaki Vulcan 2017",
+       "price": "37000",
+       "img_url":  "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202211/20221123/kawasaki-vulcan-s-abs-wmimagem18202337998.jpg?s=fill&w=1920&h=1440&q=75"
+    },
+    {
+       "id" :2,
+       "name":  "Honda PCX 2023",
+       "price": "17000",
+       "img_url":  "https://motos2023.com.br/wp-content/uploads/2022/01/9-2.jpg"
+    }
+ ]
