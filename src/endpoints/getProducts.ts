@@ -1,16 +1,15 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
-// import getAddressInfo from "../data/services/getAddressInfo";
-import { user } from "../types";
 
-export default async function getUsers(
+
+export default async function getProducts(
    req: Request,
    res: Response
 ): Promise<void> {
    try {
 
       const result = await connection.raw(`
-         SELECT * FROM labecommerce_users;
+         SELECT * FROM labecommerce_products;
       `)
       
       res.status(201).send(result)

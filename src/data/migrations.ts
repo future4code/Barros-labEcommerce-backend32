@@ -15,19 +15,19 @@ const createTables = () => connection
          password VARCHAR(255) NOT NULL
       );
       CREATE TABLE IF NOT EXISTS labecommerce_products (
-         id VARCHAR(255) PRIMARY KEY,
+         id BIGINT PRIMARY KEY,
          name VARCHAR(255) NOT NULL,
          price VARCHAR(255) NOT NULL,
-         image_url VARCHAR(255) NOT NULL
+         img_url VARCHAR(255) NOT NULL
       );
       CREATE TABLE IF NOT EXISTS labecommerce_purchases (
-         id VARCHAR(255) PRIMARY KEY,
+         id BIGINT PRIMARY KEY auto_increment,
          user_id VARCHAR(255) NOT NULL, 
-            FOREIGN KEY (user_id) REFERENCES labecommerce_users (id),
          product_id VARCHAR(255) NOT NULL,
             FOREIGN KEY (product_id) REFERENCES labecommerce_products (id),
-         quantity VARCHAR(255) NOT NULL,
-         total_price VARCHAR(255) NOT NULL
+            FOREIGN KEY (user_id) REFERENCES labecommerce_users (id),
+         quantity INT NOT NULL,
+         total_price INT NOT NULL
       );
 
 
@@ -35,17 +35,17 @@ const createTables = () => connection
    .then(() => { console.log("Tabelas criadas") })
    .catch(printError)
 
-const insertUsers = () => connection("aula_webservices_users")
+const insertUsers = () => connection("labecommerce_users")
    .insert(users)
    .then(() => { console.log("Users created") })
    .catch(printError)
 
-const insertProducts = () => connection("aula_webservices_users")
+const insertProducts = () => connection("labecommerce_products")
    .insert(products)
    .then(() => { console.log("Products created") })
    .catch(printError)
 
-const insertPurchases = () => connection("aula_webservices_users")
+const insertPurchases = () => connection("labecommerce_purchases")
    .insert(purchases)
    .then(() => { console.log("Purchases created") })
    .catch(printError)
@@ -55,5 +55,5 @@ const insertPurchases = () => connection("aula_webservices_users")
 const closeConnection = () => { connection.destroy() }
 
 createTables()
-   .then(insertUsers, insertProducts)
+   .then(insertProducts)
    .finally(closeConnection)
